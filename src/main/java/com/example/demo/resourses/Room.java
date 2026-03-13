@@ -1,7 +1,7 @@
 package com.example.demo.resourses;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +24,7 @@ public class Room {
     private int floor;
     private int number;
     @OneToMany(mappedBy = "room")
-    @JsonBackReference
+    @JsonIgnore
     private List<Reservation> reservations;
 
 

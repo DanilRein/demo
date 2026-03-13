@@ -7,6 +7,5 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    @Query(value = "SELECT * FROM reservations WHERE number = :number AND date = :date", nativeQuery = true)
     Optional<Reservation> findByNumberAndDate(Long number, LocalDate date);
 }

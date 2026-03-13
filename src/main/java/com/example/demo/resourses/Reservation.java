@@ -1,6 +1,5 @@
 package com.example.demo.resourses;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +24,6 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "room_id", nullable = false )
-    @JsonManagedReference
     private Room room;
 
 }
